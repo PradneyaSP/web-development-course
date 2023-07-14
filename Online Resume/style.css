@@ -1,0 +1,32 @@
+html {
+    background-color: #001C30;
+}
+
+#my-pic {
+    width: 50%;
+    text-align: center;
+    background-color: #64CCC5;
+    padding: 10px;
+    border: dashed #DAFFFB;
+}
+
+h1{
+    margin-top: 0;
+    font-family: 'Tektur', cursive;
+    font-size: x-large;
+    text-align: center; 
+    color: aliceblue;
+}
+
+.main-head{
+    font-family: 'Tektur', cursive;
+    font-size: 50px;
+      
+}
+
+#summary {
+    background-color: #176B87;
+    padding: 10px;
+    border: dashed #DAFFFB;
+    width: 50%;
+}
