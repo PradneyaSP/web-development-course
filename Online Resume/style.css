@@ -2,14 +2,6 @@ html {
     background-color: #001C30;
 }
 
-#my-pic {
-    width: 50%;
-    text-align: center;
-    background-color: #64CCC5;
-    padding: 10px;
-    border: dashed #DAFFFB;
-}
-
 h1{
     margin-top: 0;
     font-family: 'Tektur', cursive;
@@ -24,9 +16,78 @@ h1{
       
 }
 
+.grid-container{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 5px;
+}
+
+.grid-container-2{
+    margin-top: 5px;
+    display: grid;
+    grid-template-columns: 2fr 1.5fr 1.5fr;
+    gap: 5px;
+}
+
+#my-pic {
+    text-align: center;
+    background-color: #64CCC5;
+    padding: 10px;
+    border: dashed #DAFFFB;
+} 
+
 #summary {
     background-color: #176B87;
     padding: 10px;
     border: dashed #DAFFFB;
-    width: 50%;
+}
+
+.formal-edu {
+    background-color: seagreen;
+    border: dashed #DAFFFB;
+    padding: 10px;
+}
+
+.workexp {
+    background-color:darkcyan;
+    border: dashed #DAFFFB;
+    padding: 10px;
+}
+
+.workexp p {
+    padding: 4px;
+}
+
+.skills {
+    background-color: #64CCC5;
+    padding: 10px;
+    border: dashed #DAFFFB;
+}
+
+.awards {
+    margin-top: 5px;
+    background-color: #176B87;
+    padding: 10px;
+    border: dashed #DAFFFB;
+}
+
+footer {
+    color: aliceblue;
+    text-align: center;
+}
+
+.contact{
+    margin-top: 5px;
+    background-color: darkcyan;
+    padding: 10px;
+    border: dashed #DAFFFB;
+}
+
+a{
+    color: aliceblue;
+    display: inline;
+}
+
+.social-link {
+    text-align: center;
 }
