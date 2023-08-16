@@ -1,0 +1,9 @@
+.invisible {
+  visibility: hidden;
+}
+
+.huge {
+  font-size: 5rem;
+  font-weight: 600;
+  color: rebeccapurple;
+}

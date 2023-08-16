@@ -1,3 +1,7 @@
 {
-    "livePreview.defaultPreviewPath": "/Section 8 Advanced CSS/8.2 Responsiveness/grid.html"
+    "livePreview.defaultPreviewPath": "/Section 8 Advanced CSS/8.2 Responsiveness/grid.html",
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.black-formatter"
+    },
+    "python.formatting.provider": "none"
 }
