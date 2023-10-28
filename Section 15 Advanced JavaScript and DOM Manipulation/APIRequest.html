@@ -1,0 +1,65 @@
+<!-- https://randomuser.me/api/ -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .hidden {
+            display: none;
+        }
+
+        .card {
+            text-align: center;
+            font-size: 3rem;
+            width: 500px;
+            height: 500px;
+            margin: auto;
+        }
+
+        img {
+            width:400px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 0	UNSENT	Client has been created. open() not called yet.
+    1	OPENED	open() has been called.
+    2	HEADERS_RECEIVED	send() has been called, and headers and status are available.
+    3	LOADING	Downloading; responseText holds partial data.
+    4	DONE	The operation is complete. -->
+
+    <button>Click Me</button>
+    <div class="card hidden">
+        <p></p>
+        <img src="" alt="">
+    </div>
+</body>
+<script>
+    let imageURL;
+    let username;
+    const reqestURL = "https://api.github.com/users/pradneyasp";
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', reqestURL);
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState == 4) {
+            const data = JSON.parse(this.responseText);
+            imageURL = data.avatar_url;
+            username = data.login;
+            document.querySelector(".card>p").innerHTML = `${username}`;
+            document.querySelector(".card>img").setAttribute("src", imageURL);
+        }
+    }
+    xhr.send();
+
+    document.querySelector("button").addEventListener("click", function () {
+        document.querySelector(".card").classList.toggle("hidden");
+        // console.log("Hello");
+    })
+</script>
+
+</html>
