@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="root"></div>
+</body>
+<script>
+    //Callbacks are functions that are passed as arguments to another function
+    function loadScript(src,callback){
+        const script = document.createElement("script");
+        script.src = src;
+        script.onload = function(){
+            console.log("script loaded with src : " + src);
+            callback(null,src);
+        }
+        script.onerror = function(){
+            console.log("Srcipt was not loaded : " + src);
+            callback(new Error("src got some error") , src)
+        }
+
+        document.body.appendChild(script);
+    }
+
+    function sayHello(error , src){
+        if(error){
+            console.log(error);
+            return;
+        }
+        console.log("Script loaded successfully !! Src: " + src);
+    }
+
+    loadScript("https://cdn.jsdelivzXr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js",sayHello)
+</script>
+
+</html>
+
+// Callback hell is a concept in which you add a calback within a callback which is also wih=thin a callback and so on...
+// It is also called as pyramid of doom
