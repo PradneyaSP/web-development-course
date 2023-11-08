@@ -1,0 +1,16 @@
+{
+  "name": "qr-generator",
+  "version": "1.0.0",
+  "description": "This is a small project which takes url from user and generates a qr",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "inquirer": "^9.2.12",
+    "qr-image": "^3.2.0"
+  },
+  "author": "Pradneya",
+  "license": "ISC"
+}
