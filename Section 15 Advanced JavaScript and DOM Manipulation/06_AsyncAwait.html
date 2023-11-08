@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    //Async function always returns a promise and can await promises inside it
+    async function sayHello() {
+        console.log("Hello World!");
+        return 1;
+    }
+
+    async function getAQIOfCities() {
+        const delhiAQI = new Promise((resolve, reject) => {
+            setTimeout(() => {
+                resolve(400);
+            }, 2000)
+        })
+
+        const bangloreAQI = new Promise((resolve, reject) => {
+            setTimeout(() => {
+                resolve(250);
+            }, 5000)
+        })
+        //All the lines after await after this line will be paused till the fullfilment of promise delhiAQI
+        const delhi = await delhiAQI;
+        const banglore = await bangloreAQI;
+
+        return [delhi, banglore];
+    }
+
+    getAQIOfCities().then(value => { console.log(value) });
+    // let a = getAQIOfCities();
+    // a.then( value => {
+    //     console.log(a);
+    // })
+
+    //Caching error in async functions
+    async function getUserInfo() {
+        try {
+            const response = await fetch("https://api.gitthub.com/users/pradneyasp");
+            const data = await response.json();
+            return data;
+        } catch (error) {
+            console.log("Some error occured in fetching the data");
+        }
+    }
+
+    const p2 = getUserInfo();
+    p2.then(data => {
+        console.log(data);
+    })
+</script>
+
+</html>
